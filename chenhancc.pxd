@@ -1,6 +1,5 @@
 from libcpp cimport bool
 from libcpp.vector cimport vector as libcpp_vector
-from libcpp.string cimport string as libcpp_string
 from libcpp.set cimport set as libcpp_set
 
 cdef extern from "Point3D.hpp":        
@@ -53,8 +52,7 @@ cdef extern from "RichModel.hpp":
     cdef cppclass CRichModel(CBaseModel):
         # wrap-inherits:
         #     CBaseModel
-        #
-        
+        #        
         CRichModel();
         void Preprocess();
         int GetNumOfEdges();
@@ -88,7 +86,7 @@ cdef extern from "ExactMethodForDGP.hpp":
         # wrap-ignore    
         # ABSTRACT class
         #
-        CExactMethodForDGP(CRichModel inputModel, libcpp_set[int] indexOfSourceVerts)  except +#wrap-ignore
+        CExactMethodForDGP(CRichModel inputModel, libcpp_set[int] indexOfSourceVerts)  except +
         int GetRootSourceOfVert(int index)
         libcpp_vector[EdgePoint] FindSourceVertex(int indexOfVert, libcpp_vector[EdgePoint] resultingPath)
         void PickShortestPaths(int num)

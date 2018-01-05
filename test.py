@@ -1,4 +1,4 @@
-from py_chenhan import CPoint3D, CFace, CBaseModel, CRichModel, CICHWithFurtherPriorityQueue;
+from py_chenhancc import CPoint3D, CFace, CBaseModel, CRichModel, CICHWithFurtherPriorityQueue;
 
 def rotate(l, n):
     return l[n:] + l[:n];

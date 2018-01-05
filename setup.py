@@ -5,8 +5,8 @@ from Cython.Distutils import build_ext
 data_dir = pkg_resources.resource_filename("autowrap", "data_files")
 include_dir = os.path.join(data_dir, "autowrap")
 
-ext = Extension("chenhancc",
-                sources = ['chenhancc.pyx', 'chenhancc.cpp'],
+ext = Extension("py_chenhancc",
+                sources = ['py_chenhancc.cpp'],
                 language="c++",
                 extra_compile_args=["-std=c++14"],
                 extra_link_args=["-std=c++14"],
@@ -14,7 +14,7 @@ ext = Extension("chenhancc",
                )
 
 setup(cmdclass={'build_ext':build_ext},
-      name="chenhancc",
+      name="py_chenhancc",
       version="0.0.1",
       ext_modules = [ext],
       install_requires=[
