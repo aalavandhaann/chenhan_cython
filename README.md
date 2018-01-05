@@ -51,7 +51,7 @@ Installation
 
 ISSUES
 ------
-- Unix systems - Using pip install ```pip install chenhancc``` it would fail saying the command gcc failed with the compilation because of blah blah reason. I got it to work by exporting ```export CC=x86_64-linux-gnu-g++```
+- Unix systems - Using pip install ```pip install py_chenhancc``` it would fail saying the command gcc failed with the compilation because of blah blah reason. I got it to work by exporting ```export CC=x86_64-linux-gnu-g++```
 - Next if you notice it still fails after setting the above step ensure you have gcc version 4.9 atleast. Looks like gcc 4.8 is annoyed with std=c++14 flag in the compiler options. These two steps should figure you out.
 - Windows and Macintosh systems - I am finding it difficult to get my hands on a macintosh machine. Will soon test it and update all of you with what is necessary. If someone is kind enough to lend me a hand then please. 
 
