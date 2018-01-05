@@ -8,7 +8,9 @@ include_dir = os.path.join(data_dir, "autowrap")
 CPP_suffix = "_GCC.cpp";
 PYX_suffix = "_GCC.pyx";
 
-if(platform.system() == 'WINDOWS'):
+print('PLATFORM DETECTED ', platform.system());
+
+if(platform.system().upper() == 'WINDOWS'):
     CPP_suffix = "_WIN.cpp";
     PYX_suffix = "_WIN.pyx";
 
@@ -33,3 +35,6 @@ setup(cmdclass={'build_ext':build_ext},
       ]
      )
 
+###AUTOWRAP
+#autowrap --out py_chenhan.pyx chenhancc.pxd
+#python setup.py build_ext --inplace
