@@ -88,7 +88,7 @@ cdef extern from "ExactMethodForDGP.hpp":
         # wrap-ignore    
         # ABSTRACT class
         #
-        CExactMethodForDGP(CRichModel inputModel, libcpp_set[int] indexOfSourceVerts)  except +
+        CExactMethodForDGP(CRichModel inputModel, libcpp_set[int] indexOfSourceVerts)  except +#wrap-ignore
         int GetRootSourceOfVert(int index)
         libcpp_vector[EdgePoint] FindSourceVertex(int indexOfVert, libcpp_vector[EdgePoint] resultingPath)
         void PickShortestPaths(int num)
@@ -123,14 +123,5 @@ cdef extern from "ICHWithFurtherPriorityQueue.hpp":
         #     CImprovedCHWithEdgeValve
         #
         CICHWithFurtherPriorityQueue(CRichModel inputModel, libcpp_set[int] indexOfSourceVerts)  except +    
-
-
-###AUTOWRAP
-#autowrap --out py_chenhan.pyx chenhancc.pxd
-#python setup.py build_ext --inplace
-    
-    
-    
-    
     
     

@@ -5,19 +5,8 @@ from Cython.Distutils import build_ext
 data_dir = pkg_resources.resource_filename("autowrap", "data_files")
 include_dir = os.path.join(data_dir, "autowrap")
 
-CPP_suffix = "_GCC.cpp";
-PYX_suffix = "_GCC.pyx";
-
-if(platform.system() == 'WINDOWS'):
-    CPP_suffix = "_WIN.cpp";
-    PYX_suffix = "_WIN.pyx";
-
-print('FOR THE DETECTED PLATFORM USE THE FILES ::: ');
-print(CPP_suffix);
-print(PYX_suffix);
-
 ext = Extension("chenhancc",
-                sources = ['chenhancc'+CPP_suffix],
+                sources = ['chenhancc.pyx', 'chenhancc.cpp'],
                 language="c++",
                 extra_compile_args=["-std=c++14"],
                 extra_link_args=["-std=c++14"],
@@ -33,3 +22,6 @@ setup(cmdclass={'build_ext':build_ext},
       ]
      )
 
+###AUTOWRAP
+#autowrap --out py_chenhan.pyx chenhancc.pxd
+#python setup.py build_ext --inplace
