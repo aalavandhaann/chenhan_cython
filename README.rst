@@ -29,8 +29,8 @@ Installation
 
 **Python Package Manager (PIP)**
 
-- ```pip install py_chenhancc --user``` or
-- ```sudo pip install py_chenhancc``` (You need administration privileges)
+- ```pip install chenhancc --user``` or
+- ```sudo pip install chenhancc``` (You need administration privileges)
 
 **Easy Install**
 
@@ -47,7 +47,7 @@ Installation
 **On any OS (Linux, OS X, MAC, Windows)**
 
  - You can install using PIP
- - Do ```pip install py_chenhancc```
+ - Do ```pip install chenhancc```
 
 ISSUES
 ------
