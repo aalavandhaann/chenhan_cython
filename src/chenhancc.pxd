@@ -25,6 +25,7 @@ cdef extern from "BaseModel.hpp":
         int GetNumOfVerts();
         int GetNumOfFaces();
         bool isAValidModel();
+        CPoint3D Vert(int);
 
 cdef extern from "RichModel.hpp":
     cdef cppclass CEdge:
@@ -39,15 +40,17 @@ cdef extern from "RichModel.hpp":
         CEdge();            
     
     cdef cppclass EdgePoint:
-        int index
-        double proportion
-        bool isVertex
-        EdgePoint()
-        EdgePoint(EdgePoint other)
-        EdgePoint(int)
-        EdgePoint(int, double)
-        EdgePoint(CRichModel, int, int, double)
-        CPoint3D Get3DPoint(CRichModel)        
+        int index;
+        int leftVertIndex;
+        int rightVertIndex;
+        double proportion;
+        bool isVertex;
+        EdgePoint();
+        EdgePoint(EdgePoint other);
+        EdgePoint(int);
+        EdgePoint(int, double);
+        EdgePoint(CRichModel, int, int, double);
+        CPoint3D Get3DPoint(CRichModel);
     
     cdef cppclass CRichModel(CBaseModel):
         # wrap-inherits:
@@ -68,6 +71,7 @@ cdef extern from "RichModel.hpp":
         bool IsExtremeEdge(int)
         bool IsStartEdge(int);
         bool HasBeenProcessed();
+#         CEdge Edge(int);
     
         
 cdef extern from "ExactMethodForDGP.hpp":

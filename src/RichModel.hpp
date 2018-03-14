@@ -324,14 +324,17 @@ int CRichModel::GetEdgeIndexFromTwoVertices(int leftVert, int rightVert) const
 struct EdgePoint
 {
     int index;
+    int leftVertIndex;
+    int rightVertIndex;
+
     double proportion; //[0 --> left endpoint; 1 --> right endpoint]
 	bool isVertex;
 	EdgePoint()
 	{
 	}
-	EdgePoint(int index) : index(index), isVertex(true){}
-	EdgePoint(int index, double proportion) : index(index), proportion(proportion), isVertex(false) {}
-	EdgePoint(const CRichModel& model, int leftVert, int rightVert, double proportion) : proportion(proportion), isVertex(false)
+	EdgePoint(int index) : index(index), isVertex(true), leftVertIndex(index), rightVertIndex(index){}
+	EdgePoint(int index, double proportion) : index(index), proportion(proportion), isVertex(false), leftVertIndex(index), rightVertIndex(index) {}
+	EdgePoint(const CRichModel& model, int leftVert, int rightVert, double proportion) : proportion(proportion), isVertex(false), leftVertIndex(leftVert), rightVertIndex(rightVert)
 	{
 		index = model.GetEdgeIndexFromTwoVertices(leftVert, rightVert);
 	}

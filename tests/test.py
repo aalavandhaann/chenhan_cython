@@ -33,7 +33,7 @@ def test():
     paths = rotate(paths, 1);
     for epoint in paths:
         pt = epoint.Get3DPoint(rmodel);
-        print('PATH POINTS :::', pt.x, pt.y, pt.z);
+        print('PATH POINTS :::', pt.x, pt.y, pt.z, epoint.leftVertIndex, epoint.rightVertIndex, epoint.isVertex);
         
 if __name__ == "__main__":
     test();
