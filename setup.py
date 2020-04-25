@@ -1,14 +1,29 @@
 import os, platform, pkg_resources
-from distutils.core import setup, Extension
+#from distutils.core import setup, Extension
+from setuptools import setup, Extension;
 from Cython.Distutils import build_ext
 
-import autowrap;
+NO_AUTOWRAP=False;
+try:
+    import autowrap;
+except ImportError:
+    NO_AUTOWRAP=True;
 
-VERSION = (0, 0, 3);
+VERSION = (0, 0, 5);
 
 
 data_dir = pkg_resources.resource_filename("autowrap", "data_files")
 include_dir = os.path.join(data_dir, "autowrap")
+
+if(NO_AUTOWRAP):
+    raise IndentationError;
+else:
+    print('FOUND AUTOWRAP LIBRARY, PROCEED');
+
+print('PRECOMPILE USING AUTOWRAP BEFORE PROCEEDING');
+from autowrap.Main import run as autowrap_run;
+autowrap_run([os.path.abspath('./src/chenhancc.pxd')], [], [], os.path.abspath('./src/py_chenhancc.pyx'), );
+
 
 # if(not os.path.exists(os.path.abspath('./py_chenhancc.cpp'))):
 #     import subprocess;
@@ -45,6 +60,7 @@ setup(cmdclass={'build_ext':build_ext},
       keywords='geodesic mesh mesh3d opengl pygl triangle triangular meshes blender',
       python_requires='>=2',
       long_description=open('README.rst').read(),
+      long_description_content_type='text/markdown',
       zip_safe=False,
      )
 
