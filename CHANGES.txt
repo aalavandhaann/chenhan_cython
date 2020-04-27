@@ -4,3 +4,4 @@ v<0.0.3>, <05/01/2018> -- Adding the vertex indices to the edgepoints returned i
 v<0.0.4>, <25/04/2020> -- Changes to setup.py so that the py_chenhancc.pyx and py_chenhancc.cpp are compiled on the fly during pip install. Otherwise the the generated cpp files were failing with python version and cython version mismatches. . This version supports Linux (Tested), Windows(Tested) , and Macintosh (not tested)
 v<0.0.5>, <25/04/2020> -- Ensure to always compile for py_chenhancc.pyx and .cpp files even if they exist using the local cython installation . This version supports Linux (Tested), Windows(Tested) , and Macintosh (not tested)
 v<0.0.6>, <27/04/2020> -- Ensure to use setuptools instead of distutils, also updated the readme file to .md instead of rst
+v<0.0.7>, <27/04/2020> -- A new release to undo a stupid readme file mistake/error

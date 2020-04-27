@@ -4,7 +4,7 @@ chenhancc
 A Fast geodesic algorithm in python that spans across the surface through the polygons
 
 <p>
-	<img src="./images/Dog.jpg" height="200"><img src="./images/Cat.jpg" height="200"><img src="./images/Man.jpg" height="200">
+	<img src="https://raw.githubusercontent.com/aalavandhaann/chenhan_cython/master/images/Dog.jpg" height="200"><img src="https://raw.githubusercontent.com/aalavandhaann/chenhan_cython/master/images/Cat.jpg" height="200"><img src="https://raw.githubusercontent.com/aalavandhaann/chenhan_cython/master/images/Man.jpg" height="200">
 </p>
 <p>
 

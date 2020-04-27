@@ -9,7 +9,7 @@ try:
 except ImportError:
     NO_AUTOWRAP=True;
 
-VERSION = (0, 0, 6);
+VERSION = (0, 0, 7);
 
 
 data_dir = pkg_resources.resource_filename("autowrap", "data_files")
