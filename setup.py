@@ -9,7 +9,7 @@ try:
 except ImportError:
     NO_AUTOWRAP=True;
 
-VERSION = (0, 0, 5);
+VERSION = (0, 0, 6);
 
 
 data_dir = pkg_resources.resource_filename("autowrap", "data_files")
@@ -57,7 +57,7 @@ setup(cmdclass={'build_ext':build_ext},
       license='LICENSE.txt',
       keywords='geodesic mesh mesh3d opengl pygl triangle triangular meshes blender',
       python_requires='>=2',
-      long_description=open('README.rst').read(),
+      long_description=open('README.md').read(),
       long_description_content_type='text/markdown',
       zip_safe=False,
      )

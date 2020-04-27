@@ -7,3 +7,6 @@
 /py_chenhancc.cp36-win_amd64.pyd
 /python
 /py_chenhancc.cpython-35m-x86_64-linux-gnu.so
+dist/*
+src/py_chenhancc.cpp
+src/py_chenhancc.pyx
